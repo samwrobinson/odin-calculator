@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Class & ID formatting */
+
+.container {
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    width: 70%;
+    margin: 15% 15%;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#screen {
+    width: 90%;
+    height: 10%;
+    border: 1px solid black;
+    margin: 2% 5% 0 5%;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 70%;
+    width: 90%;
+    margin: 15% 5% 0 5%;
+}
+
+#buttons button {
+    width: 23%;
+    height: 10%;
+    margin: 1%;
+}
+
+#buttons button:nth-child(14) {
+    flex-grow: 1;
+    margin: 1% 5%;
+}
+
+@media screen and (min-width: 400px) {
+    #buttons button {
+        width: 23%;
+        height: 15%;
+        margin: 1%;
+    }
+    #screen {
+        width: 90%;
+        height: 20%;
+        border: 1px solid black;
+        margin: 5% 5% 0 5%;
+    }
+    #buttons {
+        display: flex;
+        flex-wrap: wrap;
+        height: 70%;
+        width: 90%;
+        margin: 8% 5% 0 5%;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    #calculator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 60%;
+        width: 50%;
+        margin: 15% 25%;
+        border: 1px solid black;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #calculator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80%;
+        width: 40%;
+        margin: 10% 30%;
+        border: 1px solid black;
+    }
+}
