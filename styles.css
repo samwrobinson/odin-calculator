@@ -7,6 +7,13 @@ html, body {
     width: 100%;
 }
 
+body {
+    background-color: #2b4162;
+    background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
 /* Class & ID formatting */
 
 .container {
@@ -22,16 +29,28 @@ html, body {
     height: 60%;
     width: 70%;
     margin: 15% 15%;
-    border: 1px solid black;
+    border: solid 3px rgba(255, 188, 66, 0.6);
     padding: 20px;
     border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07)
+      0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 #screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     height: 10%;
-    border: 1px solid black;
+    border: solid 2px rgba(255, 188, 66, 0.6);
+    border-radius: 15px;
     margin: 2% 5% 0 5%;
+}
+
+#calculation {
+    font-size: 1.1rem;
+    color: rgba(216, 17, 89, 0.9);
 }
 
 #buttons {
@@ -43,14 +62,35 @@ html, body {
 }
 
 #buttons button {
+    color: rgba(216, 17, 89, 0.4);
     width: 23%;
     height: 10%;
     margin: 1%;
+    border-radius: 25px;
+    background-color: transparent;
+    border: solid 1px rgba(4, 150, 255, 0.4);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 }
 
-#buttons button:nth-child(14) {
+#buttons button:hover {
+    background-color: rgba(4, 150, 255, 0.3);
+    color: rgba(216, 17, 89, 0.8);
+}
+
+/* (252,246,189 */
+#buttons #operator {
+    color: rgba(4, 150, 255, 0.4);
+    background-color: rgba(255, 188, 66, 0.3);
+    border: solid 1px rgba(255, 188, 66, 0.6);
+}
+
+#buttons #operator:hover {
+    background-color: rgba(255, 188, 66, 0.6);
+}
+
+#buttons button:last-child {
     flex-grow: 1;
-    margin: 1% 5%;
 }
 
 @media screen and (min-width: 400px) {
@@ -62,7 +102,7 @@ html, body {
     #screen {
         width: 90%;
         height: 20%;
-        border: 1px solid black;
+        border: solid 2px rgba(255, 188, 66, 0.6);
         margin: 5% 5% 0 5%;
     }
     #buttons {
@@ -82,7 +122,7 @@ html, body {
         height: 60%;
         width: 50%;
         margin: 15% 25%;
-        border: 1px solid black;
+        border: solid 3px rgba(255, 188, 66, 0.6);
     }
 }
 
@@ -91,9 +131,12 @@ html, body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 80%;
-        width: 40%;
-        margin: 10% 30%;
-        border: 1px solid black;
+        height: 70%;
+        width: 35%;
+        margin: 10% 32.5%;
+        border: solid 3px rgba(255, 188, 66, 0.6);
+    }
+    #buttons button {
+        font-size: 1.2rem;
     }
 }
