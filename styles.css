@@ -22,6 +22,10 @@ body {
     margin: 5%;
 }
 
+.inputValue {
+    color: rgba(216, 17, 89, 0.9);
+}
+
 #calculator {
     display: flex;
     flex-direction: column;
