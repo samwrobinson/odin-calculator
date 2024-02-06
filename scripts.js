@@ -8,6 +8,7 @@ let num1 = '';
 let num2 = '';
 let result = 0;
 let isOperatorClicked = false;
+let deleteItem = document.querySelector('#deleteItem');
 
 screen.style.color = '#d80f89';
 
@@ -39,23 +40,47 @@ buttons.forEach(button => {
             num2 += inputValue;
             screen.textContent = num2;
         }
+        screen.textContent = `${num1} ${currentOperation ? currentOperation + ' ': ' '}${num2}`;
     });
 });
 
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
-        if (!isOperatorClicked) {
-            currentOperation = e.target.textContent;
-            isOperatorClicked = true;
-            screen.textContent = num1 + ' ' + currentOperation;
+        if (isOperatorClicked && num2) {
+            runOperation(parseFloat(num1), parseFloat(num2));
+            num1 = result.toString();
+            screen.textContent = num1;
+            num2 = '';
         }
+        currentOperation = e.target.textContent;
+        isOperatorClicked = true;
+        screen.textContent = `${num1} ${currentOperation} ${num2}`.trim();
     });
+});
+
+deleteItem.addEventListener('click', (e) => {
+    let newNum = [];
+    if (screen.textContent === num1) {
+        newNum = Array.from(num1);
+        newNum.pop();
+        num1 = newNum.join('');
+        screen.textContent = num1;
+    } else  if (screen.textContent === num2) {
+        let newNum = Array.from(num2);
+        newNum.pop();
+        num2 = newNum.join('');
+        screen.textContent = num2
+    } else {
+        result = result;
+    }
 });
 
 equals.addEventListener('click', (e) => {
     if (num1 && num2 && currentOperation) {
-        runOperation(parseInt(num1), parseInt(num2))
-        result.toString();
+        runOperation(parseFloat(num1), parseFloat(num2));
+        num1 = result.toString();
+        num2 = '';
+        isOperatorClicked = false;
     }
 });
 
